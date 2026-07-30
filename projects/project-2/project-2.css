@@ -1,0 +1,62 @@
+:root {
+  --accent: #85D1DB;
+  --accent-dark: #5FA9B3;
+  --accent-2: #B6F2D1;
+  --bg: #F0FBFC;
+  --border: #B3EBF2;
+  --muted: #6B9AA3;
+}
+
+.site-nav {
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-detail h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  color: #5FA9B3;
+}
+
+.project-detail h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-top: 24px;
+  color: #85D1DB;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin-right: 6px;
+  color: var(--muted);
+  background-color: #C9FDF2;
+  display: inline-block;
+}
+
+.gallery img {
+  width: 286.5px;
+  height: 552px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+  margin: 0 auto;
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.project-description p {
+  color: var(--ink);
+  max-width: 700px;
+}

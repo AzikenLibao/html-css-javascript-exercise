@@ -1,0 +1,266 @@
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+:root {
+  --bg: #F3F5F0;
+  --surface: #FFFFFF;
+  --ink: #161B18;
+  --muted: #6B756F;
+  --border: #DCE1D9;
+  --accent: #2F6B52;
+  --accent-dark: #204A38;
+  --accent-2: #E8A33D;
+  --radius: 10px;
+  --mono: 'JetBrains Mono', monospace;
+  --display: 'Space Grotesk', sans-serif;
+  --body-font: 'Inter', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--body-font);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--accent-dark);
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.site-nav {
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-mono {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--ink) !important;
+}
+
+.cursor {
+  color: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor { animation: none; }
+}
+
+.site-nav .nav-link {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--muted) !important;
+  transition: color 0.2s ease;
+}
+.site-nav .nav-link:hover {
+  color: var(--accent) !important;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+.btn-accent:hover {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #fff;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+  padding: 120px 0 90px;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 3rem;
+}
+
+.hero p.lead {
+  color: var(--muted);
+  max-width: 560px;
+}
+
+/* =========================================================
+   PORTFOLIO SECTION
+========================================================= */
+#portfolio {
+  padding: 80px 0;
+  transition: background-color 0.5s ease;
+}
+
+#portfolio h2 {
+  font-family: var(--display);
+  font-weight: 600;
+}
+
+.project-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 26px rgba(22, 27, 24, 0.1);
+}
+
+.file-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background-color: #EDEFEA;
+  border-bottom: 1px solid var(--border);
+}
+
+.file-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+.file-dot.red { background-color: #E27D60; }
+.file-dot.yellow { background-color: var(--accent-2); }
+.file-dot.green { background-color: var(--accent); }
+
+.file-name {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-left: 4px;
+}
+
+/* Shared wrapper: every card's image area is the same fixed
+   height, and the image is centered inside it (horizontally
+   and vertically), no matter its natural size or shape. */
+.img-wrapper {
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--surface);
+}
+
+/* Project 1: fills the box completely, cropping if needed */
+.project-card .project-1-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Project 2: keeps the whole illustration visible, no cropping */
+.project-card .project-2-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Project 3: same "fill and crop" treatment as Project 1 */
+.project-card .project-3-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-path {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.project-title {
+  cursor: pointer;
+  font-family: var(--display);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.project-title:hover {
+  color: var(--accent);
+}
+
+.open-link {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* =========================================================
+   CONTACT SECTION
+========================================================= */
+#contact {
+  padding: 80px 0;
+  background-color: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+#contact h2 {
+  font-family: var(--display);
+  font-weight: 600;
+}
+
+.form-label {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.form-control {
+  border-radius: 8px;
+  border-color: var(--border);
+}
+.form-control:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgba(47, 107, 82, 0.15);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer {
+  background-color: var(--ink);
+  color: #C9CFC9;
+  text-align: center;
+  padding: 24px 0;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+}

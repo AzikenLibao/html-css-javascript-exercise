@@ -1,0 +1,62 @@
+:root {
+  --accent: #A0522D;       /* sienna brown — replaces the green accent */
+  --accent-dark: #7A3F22;  /* darker sienna, used on hover */
+  --accent-2: #F4A460;     /* sandy orange — secondary highlight */
+  --bg: #F5F5DC;           /* cream background for this page */
+  --border: #E8D9C0;       /* warm border tone to match the cream bg */
+}
+
+/* Give the page's nav a matching warm tint instead of the site default */
+.site-nav {
+  background-color: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-detail h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  color: #7A3F22; /* deep sienna for the title */
+}
+
+.project-detail h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-top: 24px;
+  color: #A0522D;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  border: 1px solid #F4A460;
+  border-radius: 20px;
+  padding: 3px 12px;
+  margin-right: 6px;
+  color: #A0522D;
+  background-color: #FDF3E4; /* faint cream-orange fill */
+  display: inline-block;
+}
+
+.gallery img {
+  width: 540px;
+  height: 960px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;   /* centers only works on block elements */
+  margin: 0 auto;   /* centers the image horizontally */
+}
+
+.gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.project-description p {
+  color: var(--ink);
+  max-width: 700px;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+
+  <!-- Google Fonts: display, body, and monospace typefaces -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS (grid, forms, navbar collapse behavior) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Our own stylesheet, loaded AFTER Bootstrap so it can override it -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION BAR ===================== -->
+  <nav class="navbar navbar-expand-lg site-nav sticky-top">
+    <div class="container">
+      <a class="navbar-brand brand-mono" href="#hero">My Project<span class="cursor">_</span></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navMenu"
+        aria-controls="navMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-4">
+          <li class="nav-item"><a class="nav-link" href="#hero">home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">work</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header id="hero" class="hero">
+    <div class="container">
+      <h1>Hi, I'm Libao, Rein Aziken L.</h1>
+      <p class="lead">This website is dedicated for my past projects that is memorable for me and that I think that is a great work for me</p>
+      <a href="#portfolio" class="btn btn-accent btn-lg mt-3">View my work</a>
+    </div>
+  </header>
+
+  <!-- ===================== PORTFOLIO SECTION ===================== -->
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="mb-5">Projects</h2>
+
+      <div class="row g-4">
+
+        <!-- ---------- Project 1 ---------- -->
+        <div class="col-md-4">
+          <div class="card project-card">
+            <div class="file-tab">
+              <span class="file-dot red"></span>
+              <span class="file-dot yellow"></span>
+              <span class="file-dot green"></span>
+              <span class="file-name">project-1</span>
+            </div>
+            <div class="img-wrapper">
+              <img src="project1.JPG" alt="Project 1 preview" class="project-1-img"/>
+            </div>
+            <div class="card-body">
+              <h5 class="project-title" onclick="changeBackground()">Thermo Acoustic Engine</h5>
+              <p class="card-text">This project is a thermoacoustic engine prototype that demonstrates how heat energy can be converted into sound energy without the use of moving mechanical parts. The project explores the principles of thermodynamics and acoustics while showcasing an alternative method of energy conversion through a simple and efficient design.</p>
+              <a href="projects/project-1/project-1.html" class="open-link">Open project &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- Project 2 ---------- -->
+        <div class="col-md-4">
+          <div class="card project-card">
+            <div class="file-tab">
+              <span class="file-dot red"></span>
+              <span class="file-dot yellow"></span>
+              <span class="file-dot green"></span>
+              <span class="file-name">project-2</span>
+            </div>
+            <div class="img-wrapper">
+              <img src="project2.png" alt="Project 2 preview" class="project-2-img"/>
+            </div>
+            <div class="card-body">
+              <h5 class="project-title" onclick="changeBackground()">Hydroelectric Power Plant</h5>
+              <p class="card-text">A hydroelectric power plant generates electricity from flowing and stored water, making it a sustainable and renewable source of energy. It uses turbines to transform the kinetic or potential energy of water into electrical energy, aiming to provide clean energy and preserve the environment.
+              </p>
+              <a href="projects/project-2/project-2.html" class="open-link">Open project &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---------- Project 3 ---------- -->
+        <div class="col-md-4">
+          <div class="card project-card">
+            <div class="file-tab">
+              <span class="file-dot red"></span>
+              <span class="file-dot yellow"></span>
+              <span class="file-dot green"></span>
+              <span class="file-name">project-3</span>
+            </div>
+            <div class="img-wrapper">
+              <img src="project3.jpeg" alt="Project 3 preview" class="project-3-img" />
+            </div>
+            <div class="card-body">
+              <h5 class="project-title" onclick="changeBackground()">String Art</h5>
+              <p class="card-text">This project is a handmade string art design created by arranging colorful strings around nails placed on a wooden board. It combines art and geometry to produce a unique decorative piece while showcasing creativity, precision, and craftsmanship.                
+              </p>
+              <a href="projects/project-3/project-3.html" class="open-link">Open project &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT FORM ===================== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="mb-5">Contact me</h2>
+
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="name" class="form-label">name</label>
+              <input type="text" class="form-control" id="name" required />
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                required
+                pattern=".+@.+\.com$"
+              />
+              <div class="invalid-feedback">Please enter a valid email (must contain @ and end in .com).</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">message</label>
+              <textarea class="form-control" id="message" rows="4" required></textarea>
+              <div class="invalid-feedback">Please enter a message.</div>
+            </div>
+
+            <button type="submit" class="btn btn-accent w-100">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer>
+    <p class="mb-0">&copy; 2026 Libao.dev — all rights reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS bundle: powers the navbar's mobile toggle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Our own JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
